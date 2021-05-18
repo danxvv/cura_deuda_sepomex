@@ -14,7 +14,7 @@ colonia_BP = Blueprint('colonia', __name__)
 
 @colonia_BP.route('/api/colonias', methods=['GET'])
 def get_colonias():
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     colonia = cur.execute("""
@@ -25,7 +25,7 @@ def get_colonias():
 
 @colonia_BP.route('/api/colonia/<nombre>', methods=['GET'])
 def get_colonia(nombre):
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     name = ''.join([str(elem) for elem in nombre])

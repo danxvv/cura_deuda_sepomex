@@ -14,7 +14,7 @@ codigo_postal_BP = Blueprint('codigo_postal', __name__)
 
 @codigo_postal_BP.route('/api/cp/', methods=['GET'])
 def get_cpall():
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     all_cp = cur.execute(
@@ -24,7 +24,7 @@ def get_cpall():
 
 @codigo_postal_BP.route('/api/cp/<cp>', methods=['GET'])
 def get_cp(cp):
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     one_cp = cur.execute(

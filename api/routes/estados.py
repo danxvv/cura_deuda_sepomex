@@ -14,7 +14,7 @@ estados_BP = Blueprint('estados', __name__)
 
 @estados_BP.route('/api/estados', methods=['GET'])
 def get_estados():
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     estado = cur.execute("""
@@ -25,7 +25,7 @@ def get_estados():
 
 @estados_BP.route('/api/estado/<nombre>', methods=['GET'])
 def get_estado(nombre):
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     name = ''.join([str(elem) for elem in nombre])

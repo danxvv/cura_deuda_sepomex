@@ -14,7 +14,7 @@ municipio_BP = Blueprint('municipio', __name__)
 
 @municipio_BP.route('/api/municipios', methods=['GET'])
 def get_municipios():
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     municipios = cur.execute("""
@@ -25,7 +25,7 @@ def get_municipios():
 
 @municipio_BP.route('/api/municipio/<nombre>', methods=['GET'])
 def get_municipio(nombre):
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('../example.db')
     conn.row_factory = dict_factory
     cur = conn.cursor()
     name = ''.join([str(elem) for elem in nombre])
