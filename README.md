@@ -35,3 +35,11 @@ La API se desarrollo en Flask, si ya se ha declarado la variable `FLASK_APP` bas
 * `http://127.0.0.1:5000/api/municipio/{municipio}` Busca en los municipios si hay alguno que coincida con el endpoint
 * `http://127.0.0.1:5000/api/colonias/` Devuelve todas las colonias del pais
 * `http://127.0.0.1:5000/api/colonia/{colonia}` Busca en las colonias si hay alguno que coincida con el endpoint
+
+
+## Docker
+
+Tambien se creo una imagen del proyecto en Docker, el archivo `Dockerfile` muestra los comandos usados para crear dicha imagen.  
+La imagen actualmente se encuentra en DockerHub en la siguiente liga: [DockerHub](https://hub.docker.com/r/danxvv/dockerhub/tags?page=1&ordering=last_updated)  
+Para poder correr la imagen en un contenedor local se debe tener instalado Docker y ejecutar el siguiente comando:  
+`docker run -p 5000:5000 danxvv/dockerhub:myfirstpush`
