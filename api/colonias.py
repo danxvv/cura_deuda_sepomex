@@ -1,5 +1,6 @@
 import sqlite3
 from flask import Blueprint, jsonify
+from .auth import auth
 
 
 def dict_factory(cursor, row):
@@ -13,6 +14,7 @@ colonia_BP = Blueprint('colonia', __name__)
 
 
 @colonia_BP.route('/api/colonias', methods=['GET'])
+@auth.login_required()
 def get_colonias():
     conn = sqlite3.connect('sepomex.db')
     conn.row_factory = dict_factory
@@ -24,6 +26,7 @@ def get_colonias():
 
 
 @colonia_BP.route('/api/colonia/<nombre>', methods=['GET'])
+@auth.login_required()
 def get_colonia(nombre):
     conn = sqlite3.connect('sepomex.db')
     conn.row_factory = dict_factory

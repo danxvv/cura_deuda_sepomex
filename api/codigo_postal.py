@@ -1,5 +1,6 @@
 import sqlite3
 from flask import Blueprint, jsonify
+from .auth import auth
 
 
 def dict_factory(cursor, row):
@@ -13,6 +14,7 @@ codigo_postal_BP = Blueprint('codigo_postal', __name__)
 
 
 @codigo_postal_BP.route('/api/cp/', methods=['GET'])
+@auth.login_required()
 def get_cpall():
     conn = sqlite3.connect('sepomex.db')
     conn.row_factory = dict_factory
@@ -23,6 +25,7 @@ def get_cpall():
 
 
 @codigo_postal_BP.route('/api/cp/<cp>', methods=['GET'])
+@auth.login_required()
 def get_cp(cp):
     conn = sqlite3.connect('sepomex.db')
     conn.row_factory = dict_factory
