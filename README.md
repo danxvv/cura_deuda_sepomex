@@ -60,4 +60,4 @@ Si se usa la api desde Postman o similares basta con poner el usuario y la contr
 Tambien se creo una imagen del proyecto en Docker, el archivo `Dockerfile` muestra los comandos usados para crear dicha imagen.  
 La imagen actualmente se encuentra en DockerHub en la siguiente liga: [DockerHub](https://hub.docker.com/r/danxvv/dockerhub/tags?page=1&ordering=last_updated)  
 Para poder correr la imagen en un contenedor local se debe tener instalado Docker y ejecutar el siguiente comando:  
-`docker run -p 5000:5000 danxvv/dockerhub:deploy_image`
+`docker run -dp 80:80 danxvv/dockerhub:deploy_image`
