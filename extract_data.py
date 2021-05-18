@@ -54,9 +54,6 @@ def cargar_municipios(book):
             data = []
             for index_data in [3, 7]:
                 data.append(row[index_data].value
-    '''
-    Nota: Estas consultas SQL son para limpiar la tabla de municipios y dejar solamente con cada municipio de cada estado
-    '''
             curs.execute("""INSERT INTO municipios (nombre_municipio, id_estado) VALUES (?, ?);""", data)
     curs.execute("""
               CREATE TABLE tempo(nombre_municipio TEXT, id_estado INTEGER, FOREIGN KEY (id_estado) REFERENCES estados(id));""")
