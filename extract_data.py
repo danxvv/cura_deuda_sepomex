@@ -2,7 +2,7 @@ import sqlite3
 import xlrd
 
 
-con = sqlite3.connect('example.db')
+con = sqlite3.connect('sepomex.db')
 curs = con.cursor()
 
 '''
@@ -28,7 +28,7 @@ curs.execute(
      FOREIGN KEY (id_estado) REFERENCES estados(id));
     """
 )
-sepomex_wb = xlrd.open_workbook("CPdescarga.xls")
+sepomex_wb = xlrd.open_workbook("source/CPdescarga.xls")
 
 
 def cargar_estados(book):
