@@ -9,9 +9,9 @@ Instalar mediante:
 
 Asi mismo es recomendable declarar de una vez las variables para que flask funcione:
 
-* Linux : `export FLASK_APP=main.py`
-* Windows-CMD : `set FLASK_APP=main.py`
-* Windows-PowerShell : `$env:FLASK_APP = main.py`
+* Linux : `export FLASK_APP=app.py`
+* Windows-CMD : `set FLASK_APP=app.py`
+* Windows-PowerShell : `$env:FLASK_APP = app.py`
 
 ## Uso del SeedScript
 
