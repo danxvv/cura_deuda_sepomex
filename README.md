@@ -37,15 +37,15 @@ Si se usa la api desde Postman o similares basta con poner el usuario y la contr
 
 ### Endpoints
 
-* `http://127.0.0.1/api/cp` - Nos devuelve todos los códigos postales del país (tarda un poco en cargar todos)
-* `http://127.0.0.1/api/cp/{numerocp}` - Al poner un código postal valido, nos devolverá **Código Postal - Nombre Colonia - Nombre Estado - Tipo Colonia - Tipo Zona**
-* `http://127.0.0.1/api/estados` - Devuelve los estados con su numero de estado y su capital
-* `http://127.0.0.1/api/estado/{estado}` - Busca en los estados si hay alguno que coincida con el endpoint
-* `http://127.0.0.1/api/municipios` - Devuelve los municipios del país y el estado al que pertenecen
-* `http://127.0.0.1/api/municipio/{municipio}` Busca en los municipios si hay alguno que coincida con el endpoint
-* `http://127.0.0.1/api/colonias` Devuelve todas las colonias del país
-* `http://127.0.0.1/api/colonia/{colonia}` Busca en las colonias si hay alguno que coincida con el endpoint
-* `http://127.0.0.1/api/estado`**[POST]** - Permite mediante el método POST añadir un nuevo estado y ciudad mediante JSON, siguiendo la siguiente estructura:  
+* `http://127.0.0.1:5000/api/cp` - Nos devuelve todos los códigos postales del país (tarda un poco en cargar todos)
+* `http://127.0.0.1:5000/api/cp/{numerocp}` - Al poner un código postal valido, nos devolverá **Código Postal - Nombre Colonia - Nombre Estado - Tipo Colonia - Tipo Zona**
+* `http://127.0.0.1:5000/api/estados` - Devuelve los estados con su numero de estado y su capital
+* `http://127.0.0.1:5000/api/estado/{estado}` - Busca en los estados si hay alguno que coincida con el endpoint
+* `http://127.0.0.1:5000/api/municipios` - Devuelve los municipios del país y el estado al que pertenecen
+* `http://127.0.0.1:5000/api/municipio/{municipio}` Busca en los municipios si hay alguno que coincida con el endpoint
+* `http://127.0.0.1:5000/api/colonias` Devuelve todas las colonias del país
+* `http://127.0.0.1:5000/api/colonia/{colonia}` Busca en las colonias si hay alguno que coincida con el endpoint
+* `http://127.0.0.1:5000/api/estado`**[POST]** - Permite mediante el método POST añadir un nuevo estado y ciudad mediante JSON, siguiendo la siguiente estructura:  
 
 ```json
 [  
@@ -61,4 +61,17 @@ también se creó una imagen del proyecto en Docker, el archivo `Dockerfile` mue
 La imagen actualmente se encuentra en DockerHub en la siguiente liga: [DockerHub](https://hub.docker.com/r/danxvv/dockerhub/tags?page=1&ordering=last_updated)  
 Para poder correr la imagen en un contenedor local se debe tener instalado Docker y ejecutar el siguiente comando:  
 `docker run -dp 80:80 danxvv/dockerhub:deploy_image`
+
+### Endpoints Docker
+### Endpoints
+
+* `http://127.0.0.1/api/cp` - Nos devuelve todos los códigos postales del país (tarda un poco en cargar todos)
+* `http://127.0.0.1/api/cp/{numerocp}` - Al poner un código postal valido, nos devolverá **Código Postal - Nombre Colonia - Nombre Estado - Tipo Colonia - Tipo Zona**
+* `http://127.0.0.1/api/estados` - Devuelve los estados con su numero de estado y su capital
+* `http://127.0.0.1/api/estado/{estado}` - Busca en los estados si hay alguno que coincida con el endpoint
+* `http://127.0.0.1/api/municipios` - Devuelve los municipios del país y el estado al que pertenecen
+* `http://127.0.0.1/api/municipio/{municipio}` Busca en los municipios si hay alguno que coincida con el endpoint
+* `http://127.0.0.1/api/colonias` Devuelve todas las colonias del país
+* `http://127.0.0.1/api/colonia/{colonia}` Busca en las colonias si hay alguno que coincida con el endpoint
+* `http://127.0.0.1/api/estado`**[POST]** - Permite mediante el método POST añadir un nuevo estado y ciudad mediante JSON, siguiendo la siguiente estructura:  
 
