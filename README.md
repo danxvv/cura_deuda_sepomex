@@ -1,7 +1,7 @@
 # Backend para prueba de conocimiento de CURA DEUDA
 
 ## DEMO API
-La api se encuentra actualmente en un servidor, por lo que se puede acceder a ella mediante la siguiente liga: http://34.72.229.196/api/
+La api se encuentra actualmente en un servidor, por lo que se puede acceder a ella mediante la siguiente liga: http://34.72.229.196/api
 
 ## Preparacion del entorno
 
