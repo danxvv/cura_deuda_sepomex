@@ -1,8 +1,3 @@
-FROM python:3.9.1-slim
-ADD . /python-flask
-WORKDIR /python-flask
-ENV FLASK_APP "app.py"
-ENV FLASK_ENV "development"
-ENV FLASK_DEBUG True
+FROM tiangolo/meinheld-gunicorn-flask:python3.8
+COPY . /app
 RUN pip install -r requirements.txt
-CMD flask run --host=0.0.0.0
