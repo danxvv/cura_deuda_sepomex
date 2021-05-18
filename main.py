@@ -6,6 +6,10 @@ from api.municipios import municipio_BP
 
 app = flask.Flask(__name__)
 
+
+'''
+Registro de blueprints para trabajar de forma mas limpia y ordenada
+'''
 app.register_blueprint(codigo_postal_BP)
 app.register_blueprint(estados_BP)
 app.register_blueprint(colonia_BP)
@@ -29,6 +33,9 @@ def welcome():
 
 @app.after_request
 def after_request(response):
+    '''
+    Configuracion de los CORS
+    '''
     response.headers[
         "Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Allow-Credentials"] = "true"
