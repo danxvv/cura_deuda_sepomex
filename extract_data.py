@@ -32,9 +32,6 @@ sepomex_wb = xlrd.open_workbook("source/CPdescarga.xls")
 
 
 def cargar_estados(book):
-    '''
-    Esta funcion se encarga de leer el libro, recorrer cada hoja y extrar nombre de cada estado asi como su capital y su id
-    '''
     for index in range(1, book.sheet_names().__len__()):
         sheet = book.sheet_by_index(index)
         data_estado = []
@@ -44,16 +41,13 @@ def cargar_estados(book):
 
 
 def cargar_municipios(book):
-    '''
-    Esta funcion se encarga de leer el libro, recorrer y acceder cada estado para obtener sus colomunas y extrar mucipios y el id del estado
-    '''
     for index in range(1, book.sheet_names().__len__()):
         sheet = book.sheet_by_index(index)
         for index_row in range(1, sheet.nrows):
             row = sheet.row(index_row)
             data = []
             for index_data in [3, 7]:
-                data.append(row[index_data].value
+                data.append(row[index_data].value)
             curs.execute("""INSERT INTO municipios (nombre_municipio, id_estado) VALUES (?, ?);""", data)
     curs.execute("""
               CREATE TABLE tempo(nombre_municipio TEXT, id_estado INTEGER, FOREIGN KEY (id_estado) REFERENCES estados(id));""")
@@ -64,10 +58,6 @@ def cargar_municipios(book):
 
 
 def cargar_colonias(book):
-    '''
-    Esta funcion se encarga de cargar un libro, recorrer todas las hojas y acceder a ellas para extrar codigo postal,
-    nombre de colonia, tipo de colonia, id estado y tipo de zona
-    '''
     for index in range(1, book.sheet_names().__len__()):
         sheet = book.sheet_by_index(index)
         for index_row in range(1, sheet.nrows):
@@ -82,5 +72,4 @@ def cargar_colonias(book):
 cargar_estados(sepomex_wb)
 cargar_municipios(sepomex_wb)
 cargar_colonias(sepomex_wb)
-con.commit() #Para guardar los datos en la DB.
-
+con.commit()
