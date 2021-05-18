@@ -61,7 +61,9 @@ def cargar_municipios(book):
 
 
 def cargar_colonias(book):
-    '''Esta funcion se encarga de cargar un libro, recorrer todas las hojas y acceder a ellas para extrar codigo postal, nombre de colonia, tipo de colonia, id estado y tipo de zona'''
+    '''Esta funcion se encarga de cargar un libro, recorrer todas las hojas y acceder a ellas para extrar codigo postal,
+        nombre de colonia, tipo de colonia, id estado y tipo de zona
+    '''
     for index in range(1, book.sheet_names().__len__()):
         sheet = book.sheet_by_index(index)
         for index_row in range(1, sheet.nrows):
