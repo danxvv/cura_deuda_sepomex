@@ -18,7 +18,7 @@ Crea las tablas que se usaran, estan relacionadas por el c_estado, que es el ID 
 '''
 curs.execute(
     """CREATE TABLE IF NOT EXISTS estados 
-    (id INTEGER PRIMARY KEY NOT NULL , nombre TEXT NOT NULL, ciudad TEXT);""")
+    (id INTEGER PRIMARY KEY NOT NULL , nombre_estado TEXT NOT NULL, capital TEXT);""")
 curs.execute(
     """CREATE TABLE IF NOT EXISTS municipios
 (nombre_municipio TEXT,id_estado INTEGER,FOREIGN KEY (id_estado) REFERENCES estados(id));""")
@@ -37,7 +37,7 @@ def cargar_estados(book):
         data_estado = []
         for i in [4, 5, 7]:
             data_estado.append(sheet.row(1)[i].value)
-        curs.execute("""INSERT INTO estados (nombre, ciudad, id) VALUES (?, ?, ?);""", data_estado)
+        curs.execute("""INSERT INTO estados (nombre_estado, capital, id) VALUES (?, ?, ?);""", data_estado)
 
 
 def cargar_municipios(book):
