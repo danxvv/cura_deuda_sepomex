@@ -1,5 +1,8 @@
 # Backend para prueba de conocimiento de CURA DEUDA
 
+## DEMO API
+La api se encuentra actualmente en un servidor, por lo que se puede acceder a ella mediante la siguiente liga: http://34.72.229.196/api/
+
 ## Preparacion del entorno
 
 Antes de ejecutar algun comando o script se necesitan instalar ciertos paquetes para que todo pueda funcionar.
@@ -24,6 +27,8 @@ El script se encarga de filtrar la informacion en bruto del archivo `CPdescarga.
 ## Correr la API
 
 La API se desarrollo en Flask, si ya se ha declarado la variable `FLASK_APP` basta con ejecutar el siguiente comando `flask run` lo que ejecutara el API en nuestra PC.
+
+En caso de que no corra la aplicacion intentar con el siguiente comando `flask run --host=0.0.0.0` 
 
 ### Endpoints
 
